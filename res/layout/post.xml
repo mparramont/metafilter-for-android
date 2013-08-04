@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" 
+    android:orientation="vertical"
     android:background="#069" >
     
     <TextView
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:textColor="#DDD" 
         android:textStyle="bold"
-        android:textSize="16sp">
+        android:textSize="16sp" >
     </TextView>
 
     <TextView
@@ -19,10 +19,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
-        android:textSize="14sp">
+        android:textSize="14sp"
+        android:paddingLeft="16dip"
+        android:paddingRight="16dip">
     </TextView>
     
     <ListView
+        android:paddingLeft="16dip"
+        android:paddingRight="16dip"
+        android:paddingBottom="8dip"
         android:id="@+id/comments"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
