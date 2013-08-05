@@ -14,6 +14,7 @@ import android.text.Html;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PostActivity extends Activity {
 
@@ -30,14 +31,12 @@ public class PostActivity extends Activity {
 		String title = getIntent().getStringExtra("title");
 		String description = getIntent().getStringExtra("description");
 		((TextView) findViewById(R.id.title)).setText(title);
-		((TextView) findViewById(R.id.description)).setText(Html
-				.fromHtml(description));
+        ((TextView) findViewById(R.id.description)).setText(Html.fromHtml(description));
 
 		url = getIntent().getStringExtra("url");
 
 		new GetCommentsTask().execute();
 	}
-
 	class GetCommentsTask extends AsyncTask<Void, Void, ArrayList<Comment>> {
 
 		protected ArrayList<Comment> doInBackground(Void... voids) {

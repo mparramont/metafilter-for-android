@@ -59,16 +59,15 @@ public class MetaFilterActivity extends Activity {
 				Attributes atts) {
 			chars = new StringBuffer();
 		}
-
 		public void endElement(String namespaceURI, String localName,
 				String qName) throws SAXException {
-			if (localName.equals("title"))
+			if (localName.equals("title")){
 				post.title = chars.toString();
-			if (localName.equals("description"))
-				post.description = chars.toString();
-			if (localName.equals("link"))
+            }else if (localName.equals("description")){
+                post.description  = chars.toString();
+            }else if (localName.equals("link")){
 				post.url = chars.toString();
-			if (localName.equals("item")) {
+            }else if (localName.equals("item")){
 				list.add(post);
 				post = new Post();
 			}
@@ -77,6 +76,7 @@ public class MetaFilterActivity extends Activity {
 		public void characters(char ch[], int start, int length) {
 			chars.append(new String(ch, start, length));
 		}
+
 
 	}
 
